@@ -6,17 +6,22 @@
   "scripts": {
     "start": "SET NODE_ENV=development&node node_modules/webpack-dev-server/bin/webpack-dev-server.js ",
     "build": "SET NODE_ENV=production&node node_modules/webpack/bin/webpack.js",
+    "lint": "./node_modules/.bin/eslint app/src/js/*.js",
     "test": "./node_modules/.bin/mocha app/tests/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha app/tests/**/*.spec.js --require babel-register --watch",
     "test:coverage": "nyc npm test"
   },
-  "nyc":{
+  "nyc": {
     "check-coverage": true,
-    "functions":80,
-    "lines":80,
-    "exclude": ["**/*.spec.js"],
-    "reporter":["text","html"]
-   
+    "functions": 80,
+    "lines": 80,
+    "exclude": [
+      "**/*.spec.js"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ]
   },
   "author": "José Freire Pereira",
   "license": "ISC",
@@ -34,6 +39,9 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "css-loader": "^1.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "less-loader": "4.1.0",

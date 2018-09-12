@@ -56,3 +56,5 @@ typings/
 
 # d otenv environment variables file
 .env
+./dist
+dist/*

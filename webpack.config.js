@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
    
     entry: () => {
-        return glob.sync('./app/js/*.js').reduce((pre, cur) => {
+        return glob.sync('./app/src/js/*.js').reduce((pre, cur) => {
             pre[cur.replace(/^.*[\\\/]/, '').split('.')[0]] = cur;
             return pre;
         }, {});

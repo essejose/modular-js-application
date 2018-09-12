@@ -1,18 +1,16 @@
 import $ from 'jquery';
 import '../css/style.scss';
-import mathAPI from './math/operations.js';
+import { add, multiply, evenNums } from './math/operations';
 
-$(document).ready(function() {
+$(document).ready(() => {
+  $('.myButton').on('click', () => {
+    const message = `5 + 3 = ${
+      add(5, 3)
+    }, 5 * 3 = ${
+      multiply(5, 3)
+    }, Even in [1,2,3,4,5] are ${
+      evenNums([1, 2, 3, 4, 5])}`;
 
-    $(".myButton").on('click', function () {
-        var message = "5 + 3 = " 
-                 + mathAPI.add(5,3) 
-                 + ", 5 * 3 = "
-                 + mathAPI.multiply(5,3) 
-                 + ", Even in [1,2,3,4,5] are "
-                 + mathAPI.evenNums([1,2,3,4,5])
-    
-        alert(message);
-    });
-      
+    $('.result').html(message);
+  });
 });
