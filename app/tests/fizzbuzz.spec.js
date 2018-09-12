@@ -29,6 +29,7 @@ describe('FizzBuzz Main', () => {
 
     it('sould return the number  when non-multiple',()=>{
         expect(FizzBuzz(1)).to.be.equal(1);
+        expect(FizzBuzz(0)).to.be.equal(0);
     })
 
 })
